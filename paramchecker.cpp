@@ -14,6 +14,7 @@ std::vector<bool> vitalsAreOk(const std::vector<Measurement>& measurements) {
   for(auto t = measurements.begin(); t != measurements.end(); t++) {
     bool vitalResult = vitalCheckers[t->id]->measurementIsOk(t->measured_value);
     std::cout << "Vital-check result is " << vitalResult << std::endl;
+    results.push_back(vitalResult);
   }
   return results;
 }

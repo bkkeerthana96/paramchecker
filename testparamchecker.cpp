@@ -23,10 +23,10 @@ TEST(VitalsTest, when_spo2_is_low_and_respRate_is_high){
     std::vector<Measurement> measurements = {
      {spo2, 50},
      {respRate, 80},
-    },
+    };
     auto results = vitalsAreOk(measurements);
     ASSERT_EQ(results.size(), sizeof(measurements)/sizeof(measurements[2]));
-    (ASSERT_EQ(results[spo2], false) && ASSERT_EQ(results[respRate], false)) << "Resprate and spo2 is high" << std::endl;
+    (ASSERT_EQ(results[spo2], false) && ASSERT_EQ(results[respRate], false)) << "Resprate and spo2 is compromised" << std::endl;
 }
  
 int main(int argc, char **argv) {

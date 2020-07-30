@@ -13,7 +13,7 @@ TEST(VitalsTest, when_a_vital_is_off_limit_it_is_reported_with_vital_id) {
         {respRate, 50},
     };
     auto results = vitalsAreOk(measurements);
-    ASSERT_EQ(results.size(), sizeof(measurements)/sizeof(measurements[0]));
+    ASSERT_EQ(results.size(), sizeof(measurements)/sizeof(measurements[2]));
     ASSERT_EQ(results[spo2], false);
     ASSERT_EQ(results[bpm], true);
     ASSERT_EQ(results[respRate], true);

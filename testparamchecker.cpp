@@ -26,7 +26,7 @@ TEST(VitalsTest, when_spo2_is_low_and_respRate_is_high){
     };
     auto results = vitalsAreOk(measurements);
     ASSERT_EQ(results.size(), sizeof(measurements)/sizeof(measurements[2]));
-    (ASSERT_EQ(results[spo2], false) && ASSERT_EQ(results[respRate], false)) << "Resprate and spo2 is compromised" << std::endl;
+    ASSERT_EQ(results[spo2], false) && ASSERT_EQ(results[respRate], false) << "Resprate and spo2 is compromised" << std::endl;
 }
  
 int main(int argc, char **argv) {
